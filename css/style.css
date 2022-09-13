@@ -61,7 +61,7 @@ header {
 footer {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -69,3 +69,53 @@ footer {
 }
 
 /* css de index */
+
+.titulos {
+    color: white;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 27px;
+}
+
+.subtitulos {
+    color: white;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    color: white;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 650px;
+    padding: 15px;
+}
+
+.item {
+    padding: 15px;
+    width: 150px;
+}
+
+img {
+    height: 390px;  
+}
+
+/* css de detail movie */
+
+.contenedor2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
