@@ -123,6 +123,7 @@ img {
 
 
 
+
 /* css de genero */
 
 
@@ -130,6 +131,8 @@ img {
     color: aqua;
     text-align: start;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    color: brown;
 }
 
 
