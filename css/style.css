@@ -23,7 +23,8 @@ ul {
 }
 
 body {
-    background: linear-gradient(10deg, black, royalblue, black);
+    background: linear-gradient(5deg, black, royalblue, black);
+    background-attachment: fixed;
 }
 
 /* css de header y footer */
@@ -34,6 +35,8 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background: linear-gradient(10deg, black, rgba(65, 105, 225, 0.562)); 
+    
 }
 
 .logoimg {
@@ -73,12 +76,13 @@ footer {
 
 /* css de index */
 
-div {
-    background-image: url(../img/phineas.png.crdownload);
-    height: 400px;
+.phineasyferb {
+    background-image: url(../img/phineasestaanda.jpeg);
+    height: 450px;
+    width: inherit ;
     background-size: cover;
-    
 }
+
 
 h1 {
     color: white;
@@ -97,7 +101,6 @@ h1 {
     color: white;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 
 p {
@@ -113,13 +116,11 @@ p {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 650px;
+    height: max-content;
     padding: 15px;
-    
 }
 
 .item {
-    padding: 15px;
     width: 150px;
 }
 
@@ -134,48 +135,22 @@ img {
 .contenedor2 {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
+.item2 {
 
+}
 
+/* css de detail serie */
 
 
 /* css de genero */
 
 
-.generos {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: underline;
-    color: brown;
-}
 
-
-
-
-.contenedor3 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 650px;
-    padding: 15px;
-}
-
-.item3 {
-    padding: 15px;
-    width: 150px;
-}
-
-.subtitulos3 {
-    color: white;
-    text-align: start;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 
 
