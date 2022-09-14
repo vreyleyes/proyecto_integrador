@@ -32,12 +32,14 @@ header {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logoimg {
     width: 200px;
     height: 125px;
     margin: 10px;
+    border: black;
 }
 
 .formularioheader {
@@ -70,6 +72,11 @@ footer {
 
 /* css de index */
 
+h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .titulos {
     color: white;
     text-align: start;
@@ -80,8 +87,10 @@ footer {
 
 .subtitulos {
     color: white;
-    text-align: start;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    
+
 }
 
 p {
@@ -99,6 +108,7 @@ p {
     align-items: center;
     height: 650px;
     padding: 15px;
+    
 }
 
 .item {
@@ -107,7 +117,9 @@ p {
 }
 
 img {
-    height: 390px;  
+    height: 390px;
+    border: 5px solid white;
+    margin: 5px;
 }
 
 /* css de detail movie */
@@ -121,9 +133,12 @@ img {
 }
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 85f5195d450cb50cefa93c8a1ccfacba16a8a9b4
 /* css de genero */
 
 
