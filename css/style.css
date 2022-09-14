@@ -133,18 +133,14 @@ img {
 }
 
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 85f5195d450cb50cefa93c8a1ccfacba16a8a9b4
 /* css de genero */
 
 
-.prueba {
-    color: aqua;
-    text-align: start;
+.generos {
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: underline;
     color: brown;
@@ -152,13 +148,6 @@ img {
 
 
 
-.tit {
-    color: white;
-    text-align: start;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    margin: 27px;
-}
 
 .contenedor3 {
     display: flex;
