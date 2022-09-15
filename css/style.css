@@ -83,6 +83,13 @@ footer {
     background-size: cover;
 }
 
+.boton {
+    color: black;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
 
 h1 {
     color: white;
