@@ -132,13 +132,16 @@ p {
 
 .item {
     width: 20%;
+    transition: transform;
 }
 
 img{
     height: 390px;
     border: 6px solid black;
     margin: 5px;
-    width: auto;    
+    width: auto;
+    border-radius: 30px;
+    
 }
 
 
