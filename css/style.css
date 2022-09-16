@@ -121,20 +121,21 @@ p {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: max-content;
     padding: 15px;
 }
 
 .item {
-    width: 150px;
+    width: 20%;
 }
 
 img {
     height: 390px;
     border: 5px solid white;
     margin: 5px;
+    width: auto;
 }
 
 /* css de detail movie */
