@@ -23,7 +23,7 @@ ul {
 }
 
 body {
-    background: linear-gradient(5deg, black, royalblue, black);
+    background: linear-gradient(0deg, black, rgb(92, 91, 91), black);
     background-attachment: fixed;
 }
 
