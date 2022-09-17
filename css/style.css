@@ -85,27 +85,31 @@ footer {
 }
 
 .boton {
-    color: black;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
     border-radius: 10px;
+}
+
+#trailer {
+    color: black;
 }
 
 
 h1 {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+    font-size: 40px;
+    margin: 27px;
 }
 
 .titulos {
     color: white;
     text-align: start;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
+    font-size: 35px;
     margin: 27px;
 }
-
 
 
 .subtitulos {
@@ -114,6 +118,7 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 90 px;
 }
+
 
 p {
     color: white;
@@ -140,18 +145,19 @@ p {
 img{
     height: 390px;
     border: 6px solid black;
-    margin: 5px;
+    margin: 10px;
     width: auto;
-    border-radius: 30px;
-    
+    border-radius: 30px;   
 }
 
-.hola {
-    border: 5px solid grey;
-    border-radius: 10px;
+.recuadro {
+    border: 3px solid white;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 8px;
 }
 
-/* css de detail movie */
+/* css de detail movie y detail serie */
 
 .contenedor2 {
     display: flex;
@@ -161,10 +167,26 @@ img{
     align-items: flex-start;
 }
 
+.item2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
+.hijodiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
 
-/* css de detail serie */
-
+.subtitulodedetalle {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
 
 /* css de genero */
 
