@@ -7,6 +7,10 @@ li {
     margin: 30px;
 }
 
+
+
+
+    
 a {
     text-decoration: none;
     color: white;
@@ -139,7 +143,7 @@ p {
 
 .item {
     width: 20%;
-    transition: transform;
+    
 }
 
 img{
@@ -147,9 +151,11 @@ img{
     border: 6px solid black;
     margin: 10px;
     width: auto;
-    border-radius: 30px;   
+    border-radius: 30px; 
+    transition: all 300ms;  
+    position: relative;
 }
-
+img:hover{transform: scale(1.1);}
 .recuadro {
     border: 3px solid white;
     padding: 5px;
@@ -162,10 +168,17 @@ img{
 .contenedor2 {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content:flex-start
+   
+    
 }
+.texto {
+    border-radius: 25px;
+  border: 5px solid white;
+  padding: 20px;
+  width: cover;
+  height: 150px;
+    }
 
 .item2 {
     display: flex;
@@ -188,8 +201,13 @@ img{
     font-size: 25px;
 }
 
+
+
+
+
 /* css de genero */
 
+/* favoritos*/
 
 
 
