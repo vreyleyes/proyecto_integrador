@@ -236,6 +236,11 @@ img:hover{transform: scale(0.9);}
 .lista2 li {
     padding: 10px;
     margin: 50px;
+    flex-direction: column;
+}
+
+.ultimalista {
+    flex-direction: column;
 }
 
 /* favoritos*/
