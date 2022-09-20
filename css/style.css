@@ -51,8 +51,9 @@ header {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    height: 8px;
+    height: 10px;
     margin: 60px 5px;
+
 }
 
 .navegacion {
@@ -61,7 +62,7 @@ header {
     flex-direction: row;
     justify-content: space-around;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 footer {
@@ -79,16 +80,16 @@ footer {
 .phineasyferb {
     background-image: url(../img/phineasestaanda.jpeg);
     height: 450px;
-    width: inherit ;
     background-size: cover;
     border-radius: 20px;
-    border: 8px solid black;
+    border: 5px solid black;
 }
 
-.boton {
-    font-size: 20px;
+button {
+    font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    border-radius: 10px;
+    border-radius: 9px;
+    background-color: white;
 }
 
 #trailer {
@@ -196,19 +197,17 @@ img:hover{transform: scale(0.9);}
 }
     
 .item2 aside p {
-    margin: auto;
+    margin: 22px;
     text-align: justify;
 }
 
-
-.subtitulodedetalle {
+.titulodedetalle {
     color: white;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 35px;
+    margin: 27px;
 }
-
-/* css de genero */
 
 /* css de search results */
 
@@ -216,11 +215,12 @@ img:hover{transform: scale(0.9);}
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
+    margin: 50px;
 }
 
 .contenedorresultados {
     display: flex;
-    flex-wrap: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
@@ -230,27 +230,33 @@ img:hover{transform: scale(0.9);}
 
 .porfaanda {
     text-align: justify;
-    margin: 27px;
+    margin: 20px;
+}
+
+.lista2 {
+    margin: 30px;
+    flex-direction: column;
 }
 
 .lista2 li {
-    padding: 10px;
-    margin: 50px;
-    flex-direction: column;
-}
-
-.ultimalista {
-    flex-direction: column;
+    margin: 30px;
 }
 
 /* favoritos*/
 
-/* calificación de estrellas */
+.favslink {
+    color: black;
+    padding: 4px;
+}
+
+.favboton {
+    margin: 19px;
+}
 
 /* responsive */
 
 @media (max-width: 412px) {
-
+    
     .logoimg {
         margin: 0px auto;
     }
@@ -276,7 +282,7 @@ img:hover{transform: scale(0.9);}
     .phineasyferb {
         background-size: contain;
         background-repeat: no-repeat;
-        height: 153px;
+        height: 150px;
     }
 
     .phineasyferb button {
@@ -290,6 +296,7 @@ img:hover{transform: scale(0.9);}
         height: auto;
         margin: 2vh auto;
     }
+
     .item img {
         width: 90vw;
         height: auto;
@@ -298,8 +305,15 @@ img:hover{transform: scale(0.9);}
 
     footer p, footer h4 {
         text-align: center;
-        margin: 0 auto;
+        margin: 0px auto;
     }
-    
-}
 
+    .item2 aside {
+        align-self: stretch;
+    }
+
+    h1 .sinresultado {
+        text-align: justify;
+    }
+
+}
