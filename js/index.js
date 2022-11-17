@@ -1,3 +1,29 @@
+let api_key = "b91fa509ab378b2c4cee3ff42956d489"
+
+let end_point_peliculas_populares = "https://api.themoviedb.org/3/movie/popular?api_key=" + api_key + "&language=en-US&page=1"
+let end_point_series_populares = "https://api.themoviedb.org/3/tv/popular?api_key=" + api_key + "&language=en-US&page=1"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////
 let formulario = document.querySelector(".formularioheader")
 let input = document.querySelector(".buscador")
 
@@ -15,20 +41,3 @@ formulario.addEventListener("submit", function (event) {
     }
 })
 
-let url = "https://api.themoviedb.org/3/search/movie?api_key=7e2125641ec3ddbc6ebddb7479ee611c&language=en-US&page=1&include_adult=false";
-
-fetch(url)
-
-    .then(function(response) {
-        return response.json()
-    })
-
-    .then(function(data) {
-        console.log(data);
-
-
-    })
-
-    .catch(function(error) {
-        console.log(error);
-    })
