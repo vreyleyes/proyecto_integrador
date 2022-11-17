@@ -15,3 +15,20 @@ formulario.addEventListener("submit", function (event) {
     }
 })
 
+let url = "https://api.themoviedb.org/3/search/movie?api_key=7e2125641ec3ddbc6ebddb7479ee611c&language=en-US&page=1&include_adult=false";
+
+fetch(url)
+
+    .then(function(response) {
+        return response.json()
+    })
+
+    .then(function(data) {
+        console.log(data);
+
+
+    })
+
+    .catch(function(error) {
+        console.log(error);
+    })

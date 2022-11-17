@@ -74,6 +74,13 @@ footer {
     justify-content: space-between;
 }
 
+.moviedatabase {
+    height: 55px;
+    margin: 5px;
+    border-radius: 5%;
+}
+    
+
 /* css de index */
 
 .phineasyferb {
