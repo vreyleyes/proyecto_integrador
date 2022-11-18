@@ -11,6 +11,11 @@ if (recuperoStorage != null){
     favoritos= JSON.parse(recuperoStorage);
     console.log(favoritos);
 }
+else {
+    link.innerText= "No hay favoritos"
+
+}
+    
 
 
 //Necesito el id de la plei/serie
