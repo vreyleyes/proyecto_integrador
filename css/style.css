@@ -170,8 +170,8 @@ img:hover{transform: scale(0.9);}
 .contenedor_detalle_pelicula {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content:flex-start;
-    
 }
 
 .texto {
@@ -188,6 +188,7 @@ img:hover{transform: scale(0.9);}
     display: flex;
     justify-content: space-around;
     margin: auto;
+    
 }
     
 .item2 img {
@@ -257,6 +258,7 @@ img:hover{transform: scale(0.9);}
 
 .favboton {
     margin: 19px;
+    height: 30%;
 }
 
 /* responsive */
