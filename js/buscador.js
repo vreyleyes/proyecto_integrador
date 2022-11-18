@@ -1,5 +1,5 @@
-
 //// buscador:
+
 let formulario = document.querySelector(".formularioheader")
 let input = document.querySelector(".buscador")
 

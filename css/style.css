@@ -132,7 +132,7 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.contenedor {
+.contenedor_peliculas_populares, .contenedor_peliculas_mas_vistas, .contenedor_series_populares {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
