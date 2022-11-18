@@ -167,10 +167,11 @@ img:hover{transform: scale(0.9);}
 
 /* css de detail movie y detail serie */
 
-.contenedor2 {
+.contenedor_detalle_pelicula {
     display: flex;
     flex-wrap: wrap;
-    justify-content:flex-start
+    justify-content:flex-start;
+    
 }
 
 .texto {
