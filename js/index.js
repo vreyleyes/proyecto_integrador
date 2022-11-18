@@ -2,10 +2,10 @@ let api_key = "b91fa509ab378b2c4cee3ff42956d489"
 
 let end_point_peliculas_populares = "https://api.themoviedb.org/3/movie/popular?api_key=" + api_key + "&language=en-US&page=1"
 let end_point_series_populares = "https://api.themoviedb.org/3/tv/popular?api_key=" + api_key + "&language=en-US&page=1"
-// aca va la otra api 
+// La otra api:
 
 
-// fetch "peliculas populares":
+/////// fetch "peliculas populares":
 fetch(end_point_peliculas_populares)
     .then(function(response){
         return response.json()
@@ -29,7 +29,9 @@ fetch(end_point_peliculas_populares)
         console.log(error);
     })
 
-///// fetch "series populares":
+
+
+///////// fetch "series populares":
     fetch(end_point_series_populares)
     .then(function (response) {
         return response.json();
@@ -53,7 +55,8 @@ fetch(end_point_peliculas_populares)
     })
     
 
-//// fetch "peliculas mas vistas":
+
+///// fetch "peliculas mas vistas":
 
 
 
@@ -76,21 +79,4 @@ fetch(end_point_peliculas_populares)
 
 
 
-////////////////////////////////////////////////////////////////
-let formulario = document.querySelector(".formularioheader")
-let input = document.querySelector(".buscador")
-
-formulario.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    if ( input.value.length == "" ) {
-        alert("¿Qué deseás buscar?")
-
-    } else if ( input.value.length <= 2 ) {
-        alert("Escribir al menos 3 caracteres")
-
-    } else {
-        this.submit()
-    }
-})
 
