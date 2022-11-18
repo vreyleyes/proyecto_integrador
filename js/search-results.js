@@ -1,32 +1,43 @@
-// le falta un monton 
 
 
 let query = location.search; // obtengo la QS
 let stringToObject = new URLSearchParams(query); // la transformo a un objeto literal 
-let aBuscar = stringToObject('búsqueda');  // obtengo los datos de "busqueda"
+let aBuscar = stringToObject.get('búsqueda');  // obtengo los datos de "busqueda"
 
-// que url iria aca?  let url = 
+console.log(aBuscar);
 
-// console.log(url);
 
-fetch(url)
+let api_key = "b91fa509ab378b2c4cee3ff42956d489"
 
-    .then(function(response){
-        return response.json()
-    })
+// let resultados = `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=en-US&query=${aBuscar}&page=1&include_adult=false`;
 
-    .then(function(data){
-        console.log(data);
-        let info = data.results
-        let conteiner = document.querySelector(".searchResults");
-        let peliculas = '' // preguntar esto 
+let resultados = `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=en-US&query=${aBuscar}&page=1&include_adult=false`;
 
-        for(let i=0; i<info.length; i ++){
-            peliculas += `<article> `  // pregunar y terminar de agrgar la info. Hay que poner los detalles tmb.                     
+console.log(resultados);
+  
 
-        }
-    })
+// fetch(resultados)
 
-    .catch(function(error){
-        console.log(error);
-    })
+//     .then(function(response){
+//         return response.json()
+//     })
+
+//     .then(function(data){
+//         console.log(data);
+//         let info = data.results
+//         let conteiner = document.querySelector(".searchResults");
+//         let peliculas = '' // preguntar esto 
+
+//         for(let i=0; i<info.length; i ++){
+//             peliculas += `<article> `  // pregunar y terminar de agrgar la info. Hay que poner los detalles tmb.                     
+
+//         }
+//     })
+
+//     .catch(function(error){
+//         console.log(error);
+//     })
+
+
+
+
