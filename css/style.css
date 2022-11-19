@@ -168,10 +168,20 @@ img:hover{transform: scale(0.9);}
 /* css de detail movie y detail serie */
 
 .contenedor_detalle_pelicula {
-    display: flex;
+    display: center;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content:flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+.contenedor_detalle_pelicula p {
+    align-items: center;
+    height: auto;
+    width: 90vx;
+    margin: 22px;
+    justify-content: center;
+    text-align: justify;    
 }
 
 .texto {
@@ -208,11 +218,31 @@ img:hover{transform: scale(0.9);}
     text-align: justify;
 }
 
+
 .titulodedetalle {
     color: white;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 35px;
+    margin: 27px;
+}
+
+.recomendaciones {
+    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: max-content;
+    padding: 15px;
+}
+
+.elmismotitulo {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
     margin: 27px;
 }
 
@@ -249,10 +279,6 @@ img:hover{transform: scale(0.9);}
     margin: 30px;
 }
 
-.recomendaciones {
-    display: none;
-    
-}
 
 /* favoritos*/
 

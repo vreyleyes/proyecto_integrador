@@ -1,7 +1,7 @@
 let query = new URLSearchParams(window.location.search)
 let id_pelicula = query.get("q")
 
-const api_key = "b91fa509ab378b2c4cee3ff42956d489"
+let api_key = "b91fa509ab378b2c4cee3ff42956d489"
 
 url = `https://api.themoviedb.org/3/movie/${id_pelicula}?api_key=${api_key}&language=en-US`
 

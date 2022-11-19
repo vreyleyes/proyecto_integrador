@@ -2,7 +2,7 @@ let query = new URLSearchParams(window.location.search)
 let id_serie = query.get("q")
 console.log(id_serie);
 
-const api_key = "b91fa509ab378b2c4cee3ff42956d489"
+let api_key = "b91fa509ab378b2c4cee3ff42956d489"
 
 url = `https://api.themoviedb.org/3/tv/${id_serie}?api_key=${api_key}`
 let contenedor_detalle_pelicula = document.querySelector(".contenedor2")
@@ -39,13 +39,10 @@ fetch(url)
             </article>
             <button class="mostrar">
             Mostrar
-        
-            </button>
-          
-        `
+            </button>`
     })
 
-    fetch(`https://api.themoviedb.org/3/tv/${id_serie}/recommendations?api_key=${api_key}`)
+    fetch(`https://api.themoviedb.org/3/tv/${id_serie}/recommendations?api_key=${api_key}`) /// fetch recomendaciones 
     .then(function (response) {
         return response.json();
     })
@@ -59,11 +56,10 @@ fetch(url)
         for (let i = 0; i < 5; i++) { 
 
         recomendaciones.innerHTML += 
-        `
-            <article>
+        `<article>
             <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}">
-            </article>
-        `
+        </article>`
+
         }
         console.log(data);
 
@@ -82,68 +78,55 @@ fetch(url)
         })
     })
 
-    fetch(`https://api.themoviedb.org/3/tv/${id_serie}/watch/providers?api_key=${api_key}`)
+    fetch(`https://api.themoviedb.org/3/tv/${id_serie}/watch/providers?api_key=${api_key}`) /// APARECE ANTES DE RECOMENACIONES, tiene que estar después
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
         console.log(data);
         contenedor_detalle_pelicula.innerHTML +=
-        `
-                    <section class="comprar">
-                    </section>
-                    
-                    <section class="streaming">
-                        <img src="" alt="">
-                        <p></p>
-                    </section>`
+        `<section class="comprar"></section>
+        <section class="streaming">
+            <img src="" alt="">
+            <p></p>
+        </section>`
         let comprar = document.querySelector(".comprar")
         let streaming = document.querySelector(".streaming")
 
         if (data.results.US) {
             if (data.results.US.buy) {
-                comprar.innerHTML += "<h3>Comprar </h3>"
+                comprar.innerHTML += '<h3 class="elmismotitulo">Comprar</h3>'
                 for (let i = 0; i < data.results.US.buy.length; i++) {
-                    comprar.innerHTML += `<img src="https://image.tmdb.org/t/p/w200/${data.results.US.buy[i].logo_path}" alt="">
+                    comprar.innerHTML += `<img class="imgdata" src="https://image.tmdb.org/t/p/w200/${data.results.US.buy[i].logo_path}" alt="">
                     <p>${data.results.US.buy[i].provider_name}</p>`
                 }
             }
             if (data.results.US.flatrate) {
-                streaming.innerHTML += "<h3>Streaming</h3>"
+                streaming.innerHTML += '<h3 class="elmismotitulo">Streaming</h3>'
                 for (let i = 0; i < data.results.US.flatrate.length; i++) {
-                    streaming.innerHTML += `<img src="https://image.tmdb.org/t/p/w200/${data.results.US.flatrate[i].logo_path}" alt="">
+                    streaming.innerHTML += `<img class="imgdata" src="https://image.tmdb.org/t/p/w200/${data.results.US.flatrate[i].logo_path}" alt="">
                     <p>${data.results.US.flatrate[i].provider_name}</p>`
                 }
             }
-           
         }
-
         if (data.results.CH) {
             if (data.results.CH.buy) {
-                comprar.innerHTML += "<h3>Comprar </h3>"
+                comprar.innerHTML += '<h3 class="elmismotitulo">Comprar</h3>'
                 for (let i = 0; i < data.results.CH.buy.length; i++) {
-                    comprar.innerHTML += `<img src="https://image.tmdb.org/t/p/w200/${data.results.CH.buy[i].logo_path}" alt="">
+                    comprar.innerHTML += `<img class="imgdata" src="https://image.tmdb.org/t/p/w200/${data.results.CH.buy[i].logo_path}" alt="">
                     <p>${data.results.CH.buy[i].provider_name}</p>`
                 }
             }
             if (data.results.CH.flatrate) {
-                streaming.innerHTML += "<h3>Streaming</h3>"
+                streaming.innerHTML += '<h3 class="elmismotitulo">Streaming</h3>'
                 for (let i = 0; i < data.results.CH.flatrate.length; i++) {
-                    streaming.innerHTML += `<img src="https://image.tmdb.org/t/p/w200/${data.results.CH.flatrate[i].logo_path}" alt="">
+                    streaming.innerHTML += `<img class="imgdata" src="https://image.tmdb.org/t/p/w200/${data.results.CH.flatrate[i].logo_path}" alt="">
                     <p>${data.results.CH.flatrate[i].provider_name}</p>`
                 }
             }
-           
         }
-
-
-
-       
     })
 
-    
     .catch(function (error) {
         console.log(error);
     })
-
-
