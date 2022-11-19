@@ -249,6 +249,11 @@ img:hover{transform: scale(0.9);}
     margin: 30px;
 }
 
+.recomendaciones {
+    display: none;
+    
+}
+
 /* favoritos*/
 
 .favslink {
