@@ -5,7 +5,7 @@ console.log(id_serie);
 let api_key = "b91fa509ab378b2c4cee3ff42956d489"
 
 url = `https://api.themoviedb.org/3/tv/${id_serie}?api_key=${api_key}`
-let contenedor_detalle_pelicula = document.querySelector(".contenedor2")
+let contenedor_detalle_serie = document.querySelector(".contenedor_detalle_serie")
 
 ///// fetch "detalle de serie":
 
@@ -15,7 +15,7 @@ fetch(url)
     })
     .then(function (data) {
         console.log(data);
-        console.log(contenedor_detalle_pelicula);
+        console.log(contenedor_detalle_serie);
         let titulodedetalle = document.querySelector(".titulodedetalle")
 
         titulodedetalle.innerText = data.name
@@ -26,7 +26,7 @@ fetch(url)
             generos2string += data.genres[i].name + " "
         }
 
-        contenedor_detalle_pelicula.innerHTML = `
+        contenedor_detalle_serie.innerHTML = `
             <article class="item2">
                 <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}">
                 <aside>
@@ -47,7 +47,7 @@ fetch(url)
         return response.json();
     })
     .then(function (data) {
-        contenedor_detalle_pelicula.innerHTML += 
+        contenedor_detalle_serie.innerHTML += 
         `<section class="recomendaciones">
         
         </section>"`
@@ -84,7 +84,7 @@ fetch(url)
     })
     .then(function (data) {
         console.log(data);
-        contenedor_detalle_pelicula.innerHTML +=
+        contenedor_detalle_serie.innerHTML +=
         `<section class="comprar"></section>
         <section class="streaming">
             <img src="" alt="">

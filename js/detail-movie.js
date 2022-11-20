@@ -37,8 +37,35 @@ fetch(url)
                     <button type="button" class="favboton"><a class="favslink" href="./favorite.html">Agregar a Favoritos</a></button>
                 </aside>
             </article>
-        `
+            <button class="mostrar">
+            Mostrar
+            </button>`
     })
+
+    //// fetch recomendaciones:
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .catch(function (error) {
         console.log(error);
     })
