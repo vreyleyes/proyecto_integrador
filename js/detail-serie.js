@@ -63,6 +63,7 @@ fetch(url)
         }
         console.log(data);
 
+        // boton pero no funciona muy bien (revisar)
         let boton = document.querySelector(".mostrar")
         boton.addEventListener("click", function () {
             let recomendaciones = document.querySelector(".recomendaciones")
