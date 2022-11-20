@@ -1,51 +1,53 @@
 
-let query = location.search; // obtengo la QS
-let stringToObject = new URLSearchParams(query); // la transformo a un objeto literal 
-let aBuscar = stringToObject.get('búsqueda');  // obtengo los datos de "busqueda"
-
-console.log(aBuscar);
+let queryString = location.search; // obtengo query string 
+let stringToObject = new URLSearchParams(queryString); // transformo a un objeto literal 
+let aBuscar = stringToObject.get('búsqueda');  // obtengo datos busqueda usuario
 
 
-let api_key = "b91fa509ab378b2c4cee3ff42956d489"
+let api_key = "b91fa509ab378b2c4cee3ff42956d489";
 
-let resultados = `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=en-US&query=${aBuscar}&page=1&include_adult=false`;
+let resultados = `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=${aBuscar}`;
 
-console.log(resultados);
-  
 
 fetch(resultados)
 
-    .then(function(response){
-        return response.json()
-    })
+.then(function (response) {
+    return response.json()
+})
 
-    .then(function(data){
-        console.log(data);
-        let prueba = document.querySelector(".search");
-        let peliculaSearch = document.querySelector(".peliculaSearch")
-        let buscar = data.results          // o probar .data 
+.then(function(data) {
+    console.log(data); 
 
-        if(buscar.length == 0){
-            probar.innerHTML = "No se encontro ningun resultado que coincide con "+ " "+ aBuscar
-        } else {
-            probar.innerHTML = "Estos son todos los resultados para" + " " + aBuscar
-        }
+    let info = data.results; // la info está acá 
+    
 
-        for (let i= 0; i< buscar.length; i++){
-            peliculaSearch.innerHTML += `        
-            <article>
+    let search = document.querySelector(".search");
+    let peliculaSearch = document.querySelector(".peliculaSearch");
 
+    if (info.length == 0) {
+        search.innerHTML = `No se encontró ningún resultado que coincida con ${aBuscar} `
 
-            </article>`
-                   // agregar la info del article. 
-        } 
+    } else {
+        search.innerHTML = `Estos son los resultados para ${aBuscar}`
 
-    })
+    }
 
-    .catch(function(error){
-        console.log(error);
-    })
+    for (let i = 0; i < info.length; i++) {
+        
+        peliculaSearch.innerHTML += `
+        <section>
+        <article>
+        <img src=${info[i].poster_path} alt="">
+        <a class="peli"  href="./detail-movie.html?id=${info[i].id}"><p>${info[i].title}</p></a>
+        <a class="serie" href="./detail-serie.html?"id=${info[i].id}><p>${info[i].title}</p></a>
+        </article>
+        </section>
+    `
+    }
 
+})
 
-
-
+.catch(function(error) {
+    console.log(error);
+})
+  
