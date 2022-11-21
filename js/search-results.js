@@ -19,10 +19,10 @@ fetch(resultados)
     console.log(data); 
 
     let info = data.results; // la info está acá 
-    
+    console.log(info);
 
     let search = document.querySelector(".search");
-    let peliculaSearch = document.querySelector(".peliculaSearch");
+    let peliculaSearch = document.querySelector(".contenedorresultados");
 
     if (info.length == 0) {
         search.innerHTML = `No se encontró ningún resultado que coincida con ${aBuscar} `
@@ -33,16 +33,21 @@ fetch(resultados)
     }
 
     for (let i = 0; i < info.length; i++) {
-        
-        peliculaSearch.innerHTML += `
-        <section>
-        <article>
-        <img src=${info[i].poster_path} alt="">
-        <a class="peli"  href="./detail-movie.html?id=${info[i].id}"><p>${info[i].title}</p></a>
-        <a class="serie" href="./detail-serie.html?"id=${info[i].id}><p>${info[i].title}</p></a>
-        </article>
-        </section>
-    `
+        if (info[i].media_type == "movie") {
+            peliculaSearch.innerHTML += `
+            <article>
+            <img src="https://image.tmdb.org/t/p/w200/${info[i].poster_path}" alt="">
+            <a class="peli"  href="./detail-movie.html?q=${info[i].id}"><p>${info[i].title}</p></a>
+            </article>
+            `
+        } else {
+            peliculaSearch.innerHTML += `
+            <article>
+            <img src="https://image.tmdb.org/t/p/w200/${info[i].poster_path}" alt="">
+            <a class="serie" href="./detail-serie.html?q=${info[i].id}"><p>${info[i].name}</p></a>
+            </article>
+            `
+        }
     }
 
 })
@@ -51,3 +56,4 @@ fetch(resultados)
     console.log(error);
 })
   
+
