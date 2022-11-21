@@ -19,7 +19,7 @@ fetch(url)
 
     titulodedetalle.innerText = data.name;
 
-    let generos2string = "";
+    let generos2string = "";   // que seria? 
 
     for (let i = 0; i < data.genres.length; i++) {
       generos2string += data.genres[i].name + " ";
@@ -135,7 +135,7 @@ fetch(`https://api.themoviedb.org/3/tv/${id_serie}/watch/providers?api_key=${api
 
 
 
-
+// DESPUES BORRAR:
 
 // fetch(url)
 //     .then(function (response) {
