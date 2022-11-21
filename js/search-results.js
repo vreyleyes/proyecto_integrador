@@ -1,8 +1,7 @@
 
 let queryString = location.search; // obtengo query string 
 let stringToObject = new URLSearchParams(queryString); // transformo a un objeto literal 
-let aBuscar = stringToObject.get('búsqueda');  // obtengo datos busqueda usuario
-
+let aBuscar = stringToObject.get('busqueda');  // obtengo datos busqueda usuario
 
 let api_key = "b91fa509ab378b2c4cee3ff42956d489";
 
@@ -28,7 +27,7 @@ fetch(resultados)
         search.innerHTML = `No se encontró ningún resultado que coincida con ${aBuscar} `
 
     } else {
-        search.innerHTML = `Estos son los resultados para ${aBuscar}`
+        search.innerHTML = `Estos son los resultados de búsqueda para ${aBuscar}`
 
     }
 

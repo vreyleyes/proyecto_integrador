@@ -1,20 +1,20 @@
 let query = new URLSearchParams(window.location.search)
 let id_serie = query.get("q")
-console.log(id_serie);
+//console.log(id_serie);
 
 let api_key = "b91fa509ab378b2c4cee3ff42956d489"
 
 url = `https://api.themoviedb.org/3/tv/${id_serie}?api_key=${api_key}`
 let contenedor_detalle_serie = document.querySelector(".contenedor_detalle_serie")
 
-///// fetch "detalle de serie":
-
+///// FETCH DETALLE SERIES: FUNCIONA
 
 fetch(url)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
+    //console.log(data);
     let titulodedetalle = document.querySelector(".titulodedetalle");
 
     titulodedetalle.innerText = data.name;
@@ -38,6 +38,8 @@ fetch(url)
             `;
   });
 
+//// FETCH RECOMENDACIONES: FUNCIONA
+
 fetch(`https://api.themoviedb.org/3/tv/${id_serie}/recommendations?api_key=${api_key}`)
   .then(function (response) {
     return response.json();
@@ -53,7 +55,6 @@ fetch(`https://api.themoviedb.org/3/tv/${id_serie}/recommendations?api_key=${api
         `;
     }
 
-    // boton pero no funciona muy bien (revisar)
     let boton = document.querySelector(".toggle");
     console.log(boton);
     boton.addEventListener("click", function () {
@@ -67,12 +68,11 @@ fetch(`https://api.themoviedb.org/3/tv/${id_serie}/recommendations?api_key=${api
       console.log("HOLA MUNDO");
     });
 
-
   });
 
-fetch(
-  `https://api.themoviedb.org/3/tv/${id_serie}/watch/providers?api_key=${api_key}`
-) /// APARECE ANTES DE RECOMENACIONES, tiene que estar después
+//// FETCH WATCH PROVIDERS: FUNCIONA
+
+fetch(`https://api.themoviedb.org/3/tv/${id_serie}/watch/providers?api_key=${api_key}`)
   .then(function (response) {
     return response.json();
   })
