@@ -65,7 +65,7 @@ fetch(end_point_peliculas_mas_vistas)
     .then(function (data) {
         let contenedor_peliculas_mas_vistas = document.querySelector(".contenedor_peliculas_mas_vistas")
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 5; i < 10; i++) {
             contenedor_peliculas_mas_vistas.innerHTML += `
                 <article class="item">
                     <h3 class="subtitulos">${data.results[i].original_title}</h3> 

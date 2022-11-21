@@ -15,7 +15,7 @@ fetch(resultados)
 })
 
 .then(function(data) {
-    console.log(data); 
+    //console.log(data); 
 
     let info = data.results; // la info está acá 
     console.log(info);
@@ -35,14 +35,14 @@ fetch(resultados)
         if (info[i].media_type == "movie") {
             peliculaSearch.innerHTML += `
             <article>
-            <img src="https://image.tmdb.org/t/p/w200/${info[i].poster_path}" alt="">
-            <a class="peli"  href="./detail-movie.html?q=${info[i].id}"><p>${info[i].title}</p></a>
+            <a class="peli" href="./detail-movie.html?q=${info[i].id}"><img src="https://image.tmdb.org/t/p/w200/${info[i].poster_path}" alt=""></a>
+            <a class="peli" href="./detail-movie.html?q=${info[i].id}"><p>${info[i].title}</p></a>
             </article>
             `
         } else {
             peliculaSearch.innerHTML += `
             <article>
-            <img src="https://image.tmdb.org/t/p/w200/${info[i].poster_path}" alt="">
+            <a class="serie" href="./detail-serie.html?q=${info[i].id}"><img src="https://image.tmdb.org/t/p/w200/${info[i].poster_path}" alt=""></a>
             <a class="serie" href="./detail-serie.html?q=${info[i].id}"><p>${info[i].name}</p></a>
             </article>
             `
