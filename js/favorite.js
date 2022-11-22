@@ -88,7 +88,7 @@ function buscarYMostrarFavoritos2 (id){
         
         lista.innerHTML += `
             <article class="item2">
-                <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}"
+                
                 <aside>
                     <p>Nombre: ${data.original_name}</p>
  
