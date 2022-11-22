@@ -21,8 +21,7 @@ fetch(detalle_generos_pelicula)
         titulo.innerText = data.results.genre_ids;
         
 
-       
-
+    
 
     })
     .catch(function(error) {
