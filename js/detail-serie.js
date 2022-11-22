@@ -33,7 +33,7 @@ fetch(url)
                     <p>Calificación: ${data.vote_average}</p>
                     <p>Género: ${generos2string}</p>
                     <p>Sinopsis: ${data.overview}</p>
-                    <button type="button" class="favboton"><a class="favslink" href="./favorite.html">Agregar a Favoritos</a></button>
+                    
                 </aside>`
   });
 
@@ -124,3 +124,63 @@ fetch(`https://api.themoviedb.org/3/tv/${id_serie}/watch/providers?api_key=${api
   .catch(function (error) {
     console.log(error);
   });
+
+
+
+
+
+
+
+
+
+
+
+
+  let id=id_serie
+
+  let idfavoritos2 = [];
+  console.log(idfavoritos2)
+  
+  let recuperoStorage2 = localStorage.getItem("favoritos2");
+  console.log(recuperoStorage2)
+  
+  
+  if (recuperoStorage2 != null){
+      
+      idfavoritos2= JSON.parse(recuperoStorage2);
+      
+  }
+  
+  
+  let link= document.querySelector(".favslink");
+  
+  
+  if (idfavoritos2.includes(id)){
+      link.innerText = "Sacar de favoritos"
+  };
+  
+  
+  
+  
+  link.addEventListener("click", function(e){
+      
+      e.preventDefault();
+      if (idfavoritos2.includes(id)){
+          
+          let indice= idfavoritos2.indexOf(id);
+          
+          idfavoritos2.splice(indice, 1);
+          link.innerText= "Agregar a favoritos";
+      } else {
+          
+          idfavoritos2.push(id);
+          
+          link.innerText= "Sacar de favoritos"
+      }
+      
+      let personajesFavoritosToString= JSON.stringify(idfavoritos2);
+      localStorage.setItem("favoritos2", personajesFavoritosToString);
+      
+  })
+  console.log("holaaaaaaaaaaa")
+  console.log(localStorage)
