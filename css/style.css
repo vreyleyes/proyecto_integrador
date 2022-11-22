@@ -185,14 +185,25 @@ img:hover{transform: scale(0.9);}
     
 }
 
-.contenedor_detalle_pelicula .item2 aside {
+.contenedor_detalle_pelicula .item2 img {
+    margin-left: 50px;
+    padding: auto;
+}
+
+.contenedor_detalle_pelicula div p {
+    justify-content: center ;
     align-items: center;
     height: auto;
-    width: 90vx;
-    margin: 80px;
-    justify-content: center ;
-    text-align: center;    
+    width: 50vx;
+    margin: 30px;
+    text-align: justify;   
 }
+
+.contenedor_detalle_pelicula .favboton {
+    margin-left: 2.5%;
+    height: auto;
+}
+
 
 .texto {
     border-radius: 25px;

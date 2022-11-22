@@ -27,14 +27,14 @@ fetch(url)
     let item2 = document.querySelector(".item2");
     item2.innerHTML = `
     <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}"
-    <aside>
+    <aside><div>
       <p>Estreno: ${data.release_date}</p>
       <p>Duración: ${data.runtime} min</p>
       <p>Calificación: ${data.vote_average}</p>
       <p>Género: ${generos2string}</p>
       <p>Sinopsis: ${data.overview}</p>
       <button type="button" class="favboton"><a class="favslink" href="./favorite.html">Agregar a Favoritos</a></button>
-    </aside>`
+    </div></aside>`
     });
 
 // FETCH RECOMENDACIONES: FUNCIONA
