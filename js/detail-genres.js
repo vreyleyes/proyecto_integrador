@@ -6,21 +6,19 @@ let detalle_generos_series = `https://api.themoviedb.org/3/discover/tv?api_key=$
 let queryString = location.search;
 let queryStringToObject = new URLSearchParams(queryString);
 let id = queryStringToObject.get("id"); 
-console.log(id);
+//console.log(id);
 
-fetch(detalle_generos_pelicula)
+if (type == "peli") { //preguntar esto mañana 
+
+    fetch(detalle_generos_pelicula)
     .then(function(response ) {
         return response.json()
     })
     .then (function (data) {
         console.log(data);
         
-        // con el id de arriba hago todo creo
-
-        let titulo = document.querySelector(".titulos");// quiero obtener el titulo el h1
+        let titulo = document.querySelector(".titulos");
         titulo.innerText = data.results.genre_ids;
-        
-
     
 
     })
@@ -28,17 +26,19 @@ fetch(detalle_generos_pelicula)
         console.log(error);
     })
 
-fetch(detalle_generos_series)
-    .then(function(response ) {
-        return response.json()
-    })
-    .then (function (data) {
-        console.log(data);
-    })
-    .catch(function(error) {
-        console.log(error);
-    })
+} else {
 
+    fetch(detalle_generos_series)
+        .then(function(response ) {
+            return response.json()
+        })
+        .then (function (data) {
+            console.log(data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+    }
 
 
 

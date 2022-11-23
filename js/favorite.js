@@ -12,7 +12,7 @@ let seleccionados2 = JSON.parse(recuperoStorage2);
 console.log(seleccionados2);
 
 
-let lista= document.querySelector (".contenedor");
+let lista= document.querySelector (".contenedor_peliculas_populares");
 
 
 if (seleccionados == null || seleccionados.length == 0){
@@ -51,10 +51,10 @@ function buscarYMostrarFavoritos (id){
 
         
         lista.innerHTML += `
-            <article class="item2">
+            <article class="item">
                 
                 <aside>
-                    <p>Nombre: ${data.original_title}</p>
+                    <p>${data.original_title}</p>
 
                     
                     <a href="./detail-movie.html?q=${id}"><img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt=""></a>
@@ -87,10 +87,10 @@ function buscarYMostrarFavoritos2 (id){
 
         
         lista.innerHTML += `
-            <article class="item2">
+            <article class="item">
                 
                 <aside>
-                    <p>Nombre: ${data.original_name}</p>
+                    <p>${data.original_name}</p>
  
                     
                     <a href="./detail-serie.html?q=${id}"><img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt=""></a>

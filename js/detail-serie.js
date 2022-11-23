@@ -31,7 +31,7 @@ fetch(url)
                 <aside>
                     <p>Estreno: ${data.first_air_date}</p>
                     <p>Calificación: ${data.vote_average}</p>
-                    <p>Género: ${generos2string}</p>
+                    <p>Género: <a href="detail-genres.html?id=${generos2string.id}&type=serie">${generos2string}</a></p>
                     <p>Sinopsis: ${data.overview}</p>
                     
                 </aside>`

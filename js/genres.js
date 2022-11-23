@@ -17,7 +17,7 @@ fetch(generos_peliculas)
         for (let i = 0; i < data.genres.length; i++) {
             elementos += `
             <article class="generoshijos">
-            <p><a class="generos" href="detail-genres.html?id=${data.genres[i].id}">${data.genres[i].name}</a></p>
+            <p><a class="generos" href="detail-genres.html?id=${data.genres[i].id}&type=peli">${data.genres[i].name}</a></p>
             </article>`
             
         }
@@ -38,7 +38,7 @@ fetch(generos_peliculas)
             for (let i = 0; i < data.genres.length; i++) {
                 elementos +=`
                 <article class="generoshijos">
-                <p><a class="generos" href="detail-genres.html?id=${data.genres[i].id}">${data.genres[i].name}</a></p>
+                <p><a class="generos" href="detail-genres.html?id=${data.genres[i].id}&type=serie">${data.genres[i].name}</a></p>
                 </article>`
             }
 

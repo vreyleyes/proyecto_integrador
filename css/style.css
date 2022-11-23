@@ -345,8 +345,9 @@ img:hover{transform: scale(0.9);}
 }
 
 .favboton {
-    margin: 19px;
-    height: 30%;
+    margin: 25px;
+    height: 60%;
+    margin-left: 8%;
 }
 
 /* css generos */

@@ -31,7 +31,7 @@ fetch(url)
       <p>Estreno: ${data.release_date}</p>
       <p>Duración: ${data.runtime} min</p>
       <p>Calificación: ${data.vote_average}</p>
-      <p>Género: ${generos2string}</p>
+      <p>Género: <a href="detail-genres.html?id=${generos2string.id}&type=peli">${generos2string}</a></p>
       <p>Sinopsis: ${data.overview}</p>
       
     </div></aside>`
