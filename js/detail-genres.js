@@ -60,13 +60,13 @@ if (type == "peli") {
                     </article>`
                 }
                 lista.innerHTML += elementos;
+            
             })
 
 
             .catch(function (error) {
                 console.log(error);
             })
-
         }
     
 
