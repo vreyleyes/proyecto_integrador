@@ -66,7 +66,7 @@ if (type == "peli") {
                     
                     elementos += `<article class="item">
                         <h3 class="subtitulos"> ${data.results[i].name}</h3>
-                        <a href="./detail-movie.html?q=${data.results[i].id}"><img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].name}"></a>
+                        <a href="./detail-serie.html?q=${data.results[i].id}"><img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].name}"></a>
                     </article>`
                 }
 
