@@ -1,45 +1,97 @@
-let api_key = "b91fa509ab378b2c4cee3ff42956d489";
+api_key = "b91fa509ab378b2c4cee3ff42956d489";
 
-let detalle_generos_pelicula = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&sort_by=popularity.desc&page=1&with_watch_monetization_types=flatrate`;
-let detalle_generos_series = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&sort_by=popularity.desc&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
+let queryString = location.search; 
+let stringToObject = new URLSearchParams(queryString); 
+let id_genero = stringToObject.get("idG");
 
-let queryString = location.search;
-let queryStringToObject = new URLSearchParams(queryString);
-let id = queryStringToObject.get("id"); 
-
+let url_peliculas = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id_genero}&with_watch_monetization_types=flatrate`
 
 
-if (type == "peli") { //preguntar esto mañana 
+let cont_peliculas = document.querySelector(".detalle_genero_pelis");
+let id_peliculas = "";
 
-    fetch(detalle_generos_pelicula)
-    .then(function(response ) {
+fetch(url_peliculas)
+    .then(function(response){
         return response.json()
     })
-    .then (function (data) {
+    .then(function(data){
         console.log(data);
-        
-        let titulo = document.querySelector(".titulos");
-        titulo.innerText = data.results.genre_ids;
-    
+        let lista_generos = data.results;
+        cont_peliculas.innerHTML = cont_peliculas
+        for (let i=0; i<5; i++ ){
+            let title_p = info[i].title 
+            let poster = info[i].poster.poster_path
+            cont_peliculas += 
+            `<article class="movie">
+             <a href= "./detail-movie.html?id=${info[i].id}"></a>
+             </article>`; 
+            }
 
     })
-    .catch(function(error) {
+    .catch(function(error){
         console.log(error);
     })
 
-} else {
 
-    fetch(detalle_generos_series)
-        .then(function(response ) {
-            return response.json()
-        })
-        .then (function (data) {
-            console.log(data);
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let api_key = "b91fa509ab378b2c4cee3ff42956d489";
+
+// let detalle_generos_pelicula = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&sort_by=popularity.desc&page=1&with_watch_monetization_types=flatrate`;
+// let detalle_generos_series = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&sort_by=popularity.desc&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
+
+// let queryString = location.search;
+// let queryStringToObject = new URLSearchParams(queryString);
+// let id = queryStringToObject.get("id"); 
+
+
+
+// if (type == "peli") { //preguntar esto mañana 
+
+//     fetch(detalle_generos_pelicula)
+//     .then(function(response ) {
+//         return response.json()
+//     })
+//     .then (function (data) {
+//         console.log(data);
+        
+//         let titulo = document.querySelector(".titulos");
+//         titulo.innerText = data.results.genre_ids;
+    
+
+//     })
+//     .catch(function(error) {
+//         console.log(error);
+//     })
+
+// } else {
+
+//     fetch(detalle_generos_series)
+//         .then(function(response ) {
+//             return response.json()
+//         })
+//         .then (function (data) {
+//             console.log(data);
+//         })
+//         .catch(function(error) {
+//             console.log(error);
+//         })
+//     }
 
 
 
