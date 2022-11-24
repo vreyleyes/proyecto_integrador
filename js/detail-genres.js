@@ -1,7 +1,7 @@
 let queryString = location.search;
 
-let cantidaddepelis = 0
-let cantidaddeseries = 0
+cantidaddepelis = 1
+cantidaddeseries = 1
 
 let queryStringToObject = new URLSearchParams(queryString);
 
@@ -14,17 +14,17 @@ console.log(type)
 
 let api_key = "b91fa509ab378b2c4cee3ff42956d489";
 
-let page= "1"
+page= "1"
 
     
    
-
+if (type == "peli") {
 while (cantidaddepelis < 10){
 
     detalle_generos_pelicula = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&sort_by=popularity.desc&page=${page}&with_watch_monetization_types=flatrate`;
     console.log(detalle_generos_pelicula)
 
-    if (type == "peli") { //preguntar esto mañana 
+     //preguntar esto mañana 
         console.log("funca if")
         fetch(detalle_generos_pelicula)
         .then(function (response) {
@@ -70,7 +70,7 @@ while (cantidaddepelis < 10){
 
 
 
-
+if (type == "serie") {
 while (cantidaddeseries < 10){
 
     detalle_generos_series = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
@@ -110,7 +110,7 @@ while (cantidaddeseries < 10){
 
 }
 
-
+}
 
        
         
