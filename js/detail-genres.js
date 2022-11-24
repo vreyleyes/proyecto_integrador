@@ -28,26 +28,27 @@ if (type == "peli") {
 
         for (let i = 0; i < data.results.length; i++) {
 
-            let lista_generos = data.results[i].genre_ids;
             elementos +=`
-                <article class="item">
-                    <h3 class="subtitulos"> ${data.results[i].title}</h3>
-                    <a href="./detail-movie.html?q=${data.results[i].id}"><img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].title}"></a>
-                </article>`
-            }
+            <article class="item">
+                <h3 class="subtitulos"> ${data.results[i].title}</h3>
+                <a href="./detail-movie.html?q=${data.results[i].id}"><img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].title}"></a>
+            </article>`
+        }
 
             lista.innerHTML += elementos;
         
+        }) 
+        
         } else {
-
-            //fetch detalle de género de serie
     
             fetch(detalle_generos_series)
+
             .then(function(response) {
                 return response.json()
             })
 
             .then(function(data) {
+
                 console.log(data);
                 let lista = document.querySelector(".detalle_genero_series");
                 let elementos = "";
@@ -60,9 +61,13 @@ if (type == "peli") {
                 }
                 lista.innerHTML += elementos;
             })
+
+
             .catch(function (error) {
                 console.log(error);
             })
+
+        }
     
 
 
