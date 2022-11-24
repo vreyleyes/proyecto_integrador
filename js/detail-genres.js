@@ -1,3 +1,15 @@
+//// Aca logre que detail genre muestre peliculas o series del genero seleccioando pero mostraba pocas
+//// y en algunos casos, ninguna.
+///Esto pasa porque hay mas secciones de pelis o series de generos en la otras "page" en la API
+/// y en la pagina que recorre el fetch actual, se agotan las pelic o series de ese genero ( o no hay)
+///Entonces, puse whiles para que hasta que no haya por lo menos 10 series o pelis.
+////Que se siga buscando más en otras paginas "desc&page=${page}" de la seccion de discover de la API
+/// Esto lo hice con un contador que le suma 1 en cada iteracion del while
+
+
+
+
+
 let queryString = location.search;
 
 cantidaddepelis = 1
@@ -71,49 +83,77 @@ while (cantidaddepelis < 10){
 
 
 if (type == "serie") {
-while (cantidaddeseries < 10){
-
-    detalle_generos_series = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
-            if (type == "serie") { //preguntar esto mañana 
-                    console.log("funca if 2")
-                fetch(detalle_generos_series)
-                .then(function(response ) {
-                    return response.json()
-                })
-                .then (function (data) {
-                    console.log(data);
-                    
-                    for (let i = 0; i < data.results.length; i++) {
-                        console.log("funca if for")
-                        let posiblegenreid = data.results[i].genre_ids
-                        console.log(posiblegenreid)
-                        if (posiblegenreid.includes(intgenreid)){
-                            cantidaddepelis= cantidaddepelis +1
-                            page=`${cantidaddepelis}`
-                            let detalle_generos_series= document.querySelector(".detalle_genero_series");
-                            detalle_generos_series.innerHTML += `
-                            <article class="item">
-                                <h1 class="title">${data.results[i].original_name}</h3> 
-                                <a href="./detail-movie.html?q=${data.results[i].id}"><img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt=""></a>
-                                
-                            </article>
-                        `
-                            
-                            
-                        } }
+    while (cantidaddeseries < 10){
+    
+            detalle_generos_series = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
+            console.log(detalle_generos_series)
+    
+         
             
-                    })}
+            fetch(detalle_generos_series)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data.results[0].genre_ids)
+                for (let i = 0; i < data.results.length; i++) {
+                    
+                    
+                    let posiblegenreidArray = (data.results[i].genre_ids)
+                    console.log(posiblegenreidArray)
+    
+                    if (posiblegenreidArray.includes(intgenreid)){
+                       
+                        cantidaddeseries= cantidaddeseries +1
+                        page=`${cantidaddeseries}`
+                        let detalle_generos_series= document.querySelector(".detalle_genero_series");
+                        detalle_generos_series.innerHTML += `
+                        <article class="item">
+                            <h1 class="title">${data.results[i].original_name}</h3> 
+                            <a href="./detail-movie.html?q=${data.results[i].id}"><img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt=""></a>
+                            
+                        </article>
+                    `
+                        
+                        
+                    } }
+                
+                })
+            .catch(function (error) {
+                console.log(error);
+            })
+    
+        }
+    
+    
+    
+    }       
 
 
 
 
 
-}
 
-}
 
-       
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
