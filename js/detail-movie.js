@@ -29,7 +29,7 @@ fetch(url)
 
     let item2 = document.querySelector(".item2");
     item2.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}"
+      <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}">
       <aside><div>
         <p>Estreno: ${data.release_date}</p>
         <p>Duración: ${data.runtime} min</p>
@@ -180,5 +180,5 @@ link.addEventListener("click", function(e){
   
   let personajesFavoritosToString= JSON.stringify(idfavoritos);
   localStorage.setItem("favoritos", personajesFavoritosToString);
-  
+
 })
