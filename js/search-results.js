@@ -1,30 +1,25 @@
-
-let queryString = location.search; // obtengo query string 
-let stringToObject = new URLSearchParams(queryString); // transformo a un objeto literal 
-let aBuscar = stringToObject.get('busqueda');  // obtengo datos busqueda usuario
+let queryString = location.search; 
+let stringToObject = new URLSearchParams(queryString); 
+let aBuscar = stringToObject.get('busqueda');  
 
 let api_key = "b91fa509ab378b2c4cee3ff42956d489";
 
 let resultados = `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=${aBuscar}`;
 
-
 fetch(resultados)
 
-.then(function (response) {
-    return response.json()
-})
+    .then(function (response) {
+        return response.json()
+    })
 
-.then(function(data) {
-    //console.log(data); 
+    .then(function(data) { 
 
-    let info = data.results; // la info está acá 
-    console.log(info);
-
+    let info = data.results;
     let search = document.querySelector(".search");
     let peliculaSearch = document.querySelector(".contenedorresultados");
 
     if (info.length == 0) {
-        search.innerHTML = `No se encontró ningún resultado que coincida con ${aBuscar} `
+        search.innerHTML = `No se encontró ningún resultado que coincida con ${aBuscar}`
 
     } else {
         search.innerHTML = `Estos son los resultados de búsqueda para ${aBuscar}`
@@ -50,9 +45,6 @@ fetch(resultados)
     }
 
 })
-
-.catch(function(error) {
-    console.log(error);
-})
-  
-
+    .catch(function(error) {
+        console.log(error);
+    })

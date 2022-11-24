@@ -6,7 +6,8 @@ let detalle_generos_series = `https://api.themoviedb.org/3/discover/tv?api_key=$
 let queryString = location.search;
 let queryStringToObject = new URLSearchParams(queryString);
 let id = queryStringToObject.get("id"); 
-//console.log(id);
+
+
 
 if (type == "peli") { //preguntar esto mañana 
 
@@ -44,7 +45,9 @@ if (type == "peli") { //preguntar esto mañana
 
 
 
-// FETCH DETALLE GÉNERO de pelis: ME REDIRIGE A TODAS LAS PELÍCULAS, SÓLO QUIERO LAS DEL GÉNERO SELECCIONADO 
+
+
+// Fetch detalle de género de películas
 
 // fetch(detalle_generos_pelicula)
 //     .then(function (response) {
@@ -74,7 +77,7 @@ if (type == "peli") { //preguntar esto mañana
 
 //     })
 
-//     // FETCH DETALLE GENERO SERIES: EL MISMO ERROR QUE EL ANTERIOR
+//     // Fetch detalle de género de series
 
 //     fetch(detalle_generos_series)
 //         .then(function(response) {
@@ -102,6 +105,3 @@ if (type == "peli") { //preguntar esto mañana
 //     .catch(function (error) {
 //         console.log(error);
 //     })
-
-
-// el error también está en que muestran peliculas y series, sin importar qué se seleccionó. Tendría que ser solo series o sólo peliculas

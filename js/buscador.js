@@ -1,7 +1,5 @@
-//// buscador:
-
-let formulario = document.querySelector(".formularioheader")
-let input = document.querySelector(".buscador")
+let formulario = document.querySelector(".formularioheader");
+let input = document.querySelector(".buscador");
 
 formulario.addEventListener("submit", function (event) {
     event.preventDefault();
