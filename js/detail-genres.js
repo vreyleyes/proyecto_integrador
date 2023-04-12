@@ -1,5 +1,19 @@
+//// Aca logre que detail genre muestre peliculas o series del genero seleccioando pero mostraba pocas
+//// y en algunos casos, ninguna.
+///Esto pasa porque hay mas secciones de pelis o series de generos en la otras "page" en la API
+/// y en la pagina que recorre el fetch actual, se agotan las pelic o series de ese genero ( o no hay)
+///Entonces, puse whiles para que hasta que no haya por lo menos 10 series o pelis.
+////Que se siga buscando más en otras paginas "desc&page=${page}" de la seccion de discover de la API
+/// Esto lo hice con un contador que le suma 1 en cada iteracion del while
+
+
+
+
 
 let queryString = location.search;
+
+cantidaddepelis = 1
+cantidaddeseries = 1
 
 let queryStringToObject = new URLSearchParams(queryString);
 
@@ -7,26 +21,23 @@ let genreid = queryStringToObject.get("id");
 let intgenreid = parseInt(genreid)
 console.log(intgenreid)
 let type = queryStringToObject.get("type")
-
-let api_key = "b91fa509ab378b2c4cee3ff42956d489";
-let  detalle_generos_pelicula = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&sort_by=popularity.desc&page=1&with_watch_monetization_types=flatrate`;
- 
-detalle_generos_series = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
 console.log(genreid);
 console.log(type)
 
+let api_key = "b91fa509ab378b2c4cee3ff42956d489";
 
+page= "1"
 
-flag=false
     
    
 if (type == "peli") {
+while (cantidaddepelis < 10){
 
-
-   
+    detalle_generos_pelicula = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&sort_by=popularity.desc&page=${page}&with_watch_monetization_types=flatrate`;
     console.log(detalle_generos_pelicula)
 
-
+     //preguntar esto mañana 
+        console.log("funca if")
         fetch(detalle_generos_pelicula)
         .then(function (response) {
             return response.json();
@@ -41,8 +52,8 @@ if (type == "peli") {
 
                 if (posiblegenreidArray.includes(intgenreid)){
                     console.log("funca check")
-                    flag=true
-                   
+                    cantidaddepelis= cantidaddepelis +1
+                    page=`${cantidaddepelis}`
                     let detalle_generos_pelis= document.querySelector(".detalle_genero_pelis");
                     detalle_generos_pelis.innerHTML += `
                     <article class="item">
@@ -54,19 +65,6 @@ if (type == "peli") {
                     
                     
                 } }
-                
-                if (flag==false){
-                    let detalle_generos_pelis= document.querySelector(".detalle_genero_pelis");
-                    detalle_generos_pelis.innerHTML = `
-                    <article class="item">
-                        <h1>No hay peliculas de este género 😔</h3> 
-                        
-                        
-                    </article>
-                `
-                }
-             
-            
             
             })
         .catch(function (error) {
@@ -77,7 +75,7 @@ if (type == "peli") {
 
 
 
- 
+}       
 
 
 
@@ -85,9 +83,9 @@ if (type == "peli") {
 
 
 if (type == "serie") {
+    while (cantidaddeseries < 10){
     
-    
-            
+            detalle_generos_series = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
             console.log(detalle_generos_series)
     
          
@@ -105,9 +103,9 @@ if (type == "serie") {
                     console.log(posiblegenreidArray)
     
                     if (posiblegenreidArray.includes(intgenreid)){
-                        flag=true
-                 
                        
+                        cantidaddeseries= cantidaddeseries +1
+                        page=`${cantidaddeseries}`
                         let detalle_generos_series= document.querySelector(".detalle_genero_series");
                         detalle_generos_series.innerHTML += `
                         <article class="item">
@@ -119,17 +117,6 @@ if (type == "serie") {
                         
                         
                     } }
-                    if (flag==false){
-                        let detalle_generos_series= document.querySelector(".detalle_genero_series");
-                        detalle_generos_series.innerHTML = `
-                        <article class="item">
-                            <h1>No hay series de este género 😔</h3> 
-                            
-                            
-                        </article>
-                    `
-                    }
-                 
                 
                 })
             .catch(function (error) {
@@ -140,7 +127,7 @@ if (type == "serie") {
     
     
     
-       
+    }       
 
 
 
